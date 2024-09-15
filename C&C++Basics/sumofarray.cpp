@@ -25,6 +25,14 @@ int main()
         cout << A1[i] << " ";
     }
 
+    int sum=0;
+
+    for(int i=0 ; i<size ; i++)
+    {
+        sum +=A1[i];
+    }
+
     cout << endl;
+    cout << "Sum of the array elements is: " << sum << endl;
 
 }
