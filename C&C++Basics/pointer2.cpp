@@ -12,7 +12,5 @@ int main()
     p = new int[5]; // allocates space of 5 integers in the Heap.
 
     cout << "Address: " << p << endl;
-    cout << "Address: " << ++p << endl; 
-
-
+    
 }
