@@ -24,6 +24,17 @@ int main()
     cout << "Breadth: " << ptr->breadth << endl; 
 
 
+    Rectangle *ptr2;
+
+    ptr2 = new Rectangle;
+
+    ptr2->length = 2;
+    ptr2->breadth = 5;
+
+    cout << "Length: " << ptr2->length << endl;
+    cout << "Breadth: " << ptr2->breadth << endl;
+
+
 }
 
 
