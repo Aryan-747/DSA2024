@@ -29,8 +29,12 @@ int main()
             break;
         }
 
-        if(arr[i]>=arr[k])
-        {
+        else if(arr[i]>=arr[k])
+        {   
+            if(arr[i] == 0)
+            {
+                count--;
+            }
             count++;
         }
     }    
