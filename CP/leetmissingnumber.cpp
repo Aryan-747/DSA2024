@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+// Using Sorting Approach
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
