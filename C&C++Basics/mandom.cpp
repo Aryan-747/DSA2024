@@ -13,28 +13,28 @@ class Mandom
 
     Mandom()
     {
-        
+
     }
 
     // Parameterized Constructor
 
     Mandom(string name, int age)
     {
-        fname = name;
-        age = age;
+        this->fname = name;
+        this->age = age;
     }
 
 
     void display()
     {
-        cout << "Mandom Name is: " << fname << endl;
-        cout << "Mandom Age is: " << age << endl;
+        cout << "Mandom Name is: " << this->fname << endl;
+        cout << "Mandom Age is: " << this->age << endl;
     }
 
     void getinfo()
     {
-        getline(cin, fname);
-        cin >> age;
+        getline(cin, this->fname);
+        cin >> this->age;
     }
 };
 
