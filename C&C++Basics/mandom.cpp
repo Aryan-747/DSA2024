@@ -33,7 +33,9 @@ class Mandom
 
     void getinfo()
     {
+        cout << "Enter Name: ";
         getline(cin, this->fname);
+        cout << "Enter Age: ";
         cin >> this->age;
     }
 };
