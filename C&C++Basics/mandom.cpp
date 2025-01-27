@@ -9,6 +9,13 @@ class Mandom
     string fname;
     int age;
 
+    // Default Constructor
+
+    Mandom()
+    {
+        
+    }
+
     // Parameterized Constructor
 
     Mandom(string name, int age)
@@ -33,7 +40,12 @@ class Mandom
 
 int main()
 {
-    Mandom man1 = new Mandom('Aryan',25);
+    Mandom man1 = Mandom("Aryan",25);
+    Mandom man2;
+
+    man2.getinfo();
+    man1.display();
+    man2.display();
 
 
 }
