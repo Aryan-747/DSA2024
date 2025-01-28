@@ -18,6 +18,16 @@ void fun(Rectangle *r)
 
 }
 
+Rectangle *create()
+{
+    Rectangle *creator = new Rectangle;
+
+    creator->length = 69;
+    creator->breadth = 69;
+
+    return creator;
+}
+
 
 int main()
 {
@@ -40,5 +50,10 @@ int main()
 
     // Creating new instance of Rectangle using function
 
-    
+    Rectangle *r2 = create();
+
+    cout << "Values of r2: " << endl;
+    cout << "Length: " << r2->length << " Breadth: " << r2->breadth << endl;
+
+
 }
