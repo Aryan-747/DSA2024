@@ -11,7 +11,7 @@ int main()
 
 
     cout << "Value of anu is: " << anu << endl;
-    ary++;
+    anu++;
     cout << "Value of ary is: " << ary << endl;
     cout << "Value of anu is: " << anu << endl;
 
