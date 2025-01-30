@@ -15,7 +15,7 @@ int main() {
     std::cout << "Key 2: " << hashmap[2] << std::endl;
 
     // Check if a key exists
-    int key = 4;
+    int key = 2;
     if (hashmap.find(key) != hashmap.end()) {
         std::cout << "Key " << key << ": " << hashmap[key] << std::endl;
     } else {
