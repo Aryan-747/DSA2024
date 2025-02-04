@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+// Type 1
 void fun1(int n)
 {
 
@@ -12,6 +14,8 @@ void fun1(int n)
     }
 }
 
+
+// Type 2
 void fun2(int n)
 {
     if(n>0)
