@@ -24,28 +24,18 @@ int main()
 
     sort(array.begin(),array.end());
 
-    for(int i=0 ; i<array.size() ; i++)
-    {
-        cout << array[i] << " ";
-    }
-
-    cout << endl;
-
-    for(int i=0  ; i<array.size() ; i++)
-    {
-        if(i+1 != array[i])
-        {
-            ret = i+1;
-            break;
-        }    
-    }
-
     if(array.size()!=n)
     {
-        cout << array[array.size()-1] +1 << endl;
-    }
-    else
-    {
-    cout << ret << endl;
+        for(int i=0 ; i<n ; i++)
+        {
+            if(array[i]!= i+1)
+            {
+                array.push_back(i+2);
+                ret = i+1;
+                break;
+            }
+        }
+
+        cout << ret << endl;
     }
 }
