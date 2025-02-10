@@ -12,7 +12,7 @@ int main()
 
     vector<int> array;
 
-    for(int i=0 ; i<n ; i++)
+    for(int i=0 ; i<n-1 ; i++)
     {
         int no;
         cin >> no;
@@ -40,5 +40,12 @@ int main()
         }    
     }
 
+    if(array.size()!=n)
+    {
+        cout << array[array.size()-1] +1 << endl;
+    }
+    else
+    {
     cout << ret << endl;
+    }
 }
