@@ -10,6 +10,8 @@ void fun(int n)
         fun(n-1);
         fun(n-1);
     }
+
+    return;
 }
 
 int main()
@@ -17,7 +19,7 @@ int main()
     int n;
     cout << "N: ";
     cin >> n;
-    
+
     fun(n);
 
 }
