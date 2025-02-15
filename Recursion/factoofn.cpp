@@ -20,6 +20,12 @@ int main()
 
     int n ; cin >> n;
 
+    if(n<0)
+    {
+        cout << "Factorial of negative numbers don't exist!" << "\n";
+        exit(0);
+    }
+
     long faco = facto(n);
 
     cout << "Factorial of " << n << " is: " << faco << "\n";
