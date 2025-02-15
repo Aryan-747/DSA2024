@@ -3,6 +3,7 @@
 using namespace std;
 
 
+// returns factorial of n;
 
 long facto(int n)
 {
