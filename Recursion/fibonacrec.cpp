@@ -3,6 +3,7 @@
 using namespace std;
 
 // Least optimal approach to find nth fibonacci number using recursion.
+// time complexity is O(2^n)
 
 
 int fibofn(int n)
