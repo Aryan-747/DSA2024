@@ -6,7 +6,7 @@
 using namespace std;
 
 
-int F[100];
+int F[100]; 
 
 int memoifib(int n)
 {
@@ -27,7 +27,7 @@ int memoifib(int n)
         {
             F[n-1] = memoifib(n-1);
         }
-
+        F[n] = F[n-2]+F[n-1];
         return F[n-2]+F[n-1];
     }
 }
