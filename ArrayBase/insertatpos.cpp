@@ -25,12 +25,12 @@ int main()
     int ind,val;
     cin >> ind >> val;
 
-    for(int i=n ; i>=ind-1 ; i--)
+    for(int i=n ; i>=ind ; i--)
     {
         a[i] = a[i-1];
     }
     n++;
-    a[ind-1] = val;
+    a[ind] = val;
 
     cout << "Array Elements after insertion: ";
 
