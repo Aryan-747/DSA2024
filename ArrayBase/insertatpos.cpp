@@ -25,7 +25,7 @@ int main()
     int ind,val;
     cin >> ind >> val;
 
-    for(int i=n ; i>=ind ; i--)
+    for(int i=n ; i>ind ; i--)
     {
         a[i] = a[i-1];
     }
