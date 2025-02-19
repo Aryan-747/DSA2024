@@ -64,7 +64,7 @@ int main()
 
     if(ind == -1)
     {
-        cout << "Not Found :(" << "\n";
+        cout << "Element Not Found :(" << "\n";
     }
 
     else
