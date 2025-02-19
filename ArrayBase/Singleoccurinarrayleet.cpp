@@ -34,6 +34,8 @@ class Solution {
                 {
                     return nums[mid];
                 }
+
+                // We are in left side of the single element so we eliminate left portion
     
                 else if((mid%2 == 0 && nums[mid+1]== nums[mid]) || (mid%2!=0 && nums[mid-1] == nums[mid]))
                 {
