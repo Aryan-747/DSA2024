@@ -11,7 +11,7 @@ int main()
 
     for(int i=0 ; i<s.length(); i ++)
     {
-        if(s[i]>=62 && s[i]<=90)
+        if(s[i]>=65 && s[i]<=90)
         {
             s[i] = s[i]+32;
         }
