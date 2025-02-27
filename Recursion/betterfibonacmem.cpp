@@ -27,12 +27,11 @@ int fib(int n)
 
 int main()
 {
-
+    
     for(int i=0 ; i<100 ; i++)
     {
         STF[i] = -1;
     }
-
 
     int n;
     cin >> n;
@@ -41,7 +40,7 @@ int main()
 
     cout << n << "th fibonacci number is: " << res << endl;
 
-    for(int i=0 ; i<100 ; i++)
+    for(int i=0 ; i<=n ; i++)
     {
         cout << STF[i] << " ";
     }
