@@ -3,6 +3,8 @@
 using namespace std;
 
 
+// Using more auxillary space (using a map and array to store numbers)
+
 void permuts(vector<vector<int>> &answer, vector<int> &ds, vector<int> &find, int freq[])
 {
 
