@@ -3,6 +3,9 @@
 using namespace std;
 
 
+// Try to solve another question where you need to provide total no of distinct posssibilities
+
+
 void solve(int col, vector<vector<string>> &ans, vector<string> &board ,vector<int> &rowleft, vector<int> &lowerdiag, vector<int> &upperdiag, int n)
 {
 
