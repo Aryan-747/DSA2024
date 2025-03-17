@@ -24,8 +24,6 @@ void permuswap(int index, vector<vector<int>> &ans,vector<int>& nums)
 }
 
 
-
-
 int main()
 {
 
