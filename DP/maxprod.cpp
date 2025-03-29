@@ -37,8 +37,4 @@ int main()
 
     cout << maxp << endl;
 
-
-
-
-
 }
