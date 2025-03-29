@@ -2,39 +2,50 @@
 
 using namespace std;
 
+class Solution 
+{
+    public:
+        int maxProduct(vector<int>& nums) {
+    
+            int suffix = 1;
+            int prefix = 1;
+            
+            int maxprod = INT_MIN;
+    
+            int n = nums.size();
+    
+            for(int i=0 ; i<nums.size() ; i++)
+            {
+                if(suffix == 0)
+                {
+                    suffix = 1;
+                }
+    
+                if(prefix == 0)
+                {
+                    prefix = 1;
+                }
+    
+                prefix *= nums[i];
+                suffix *= nums[n-i-1];
+    
+                maxprod = max(maxprod,max(prefix,suffix));
+            }
+    
+            return maxprod;
+        }
+};
+
+
 int main()
 {
 
-    vector<int> arr = {1,2,3,0,-1,-2,5,4,3,0,2,3,4,-1,-1,2};
+    Solution s1;
 
-    int pre = 0;
-    int suf = 0;
+    vector<int> p1 = {1,2,3,4,0,-5,-5,-2,1,1,2};
 
-    int maxp = INT_MIN;
+    int p = s1.maxProduct(p1);
 
-    int pprod = 1;
-    int sprod = 1;
-
-    int n = arr.size();
-
-    for(int i=0 ; i<arr.size() ; i++)
-    {
-        if(pprod == 0)
-        {
-            pprod = 1;
-        }
-
-        if(sprod == 0)
-        {
-            sprod = 1;
-        }
-
-        pprod *= arr[i];
-        sprod *= arr[n-i-1];
-
-        maxp = max(maxp,max(sprod,pprod));
-    }
-
-    cout << maxp << endl;
+    cout << p << endl;
 
 }
