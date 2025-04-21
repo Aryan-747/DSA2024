@@ -31,8 +31,34 @@ Node* convertArrtoLL(vector<int> array)
 
 
     return head;
+}
 
+void traversal(Node* head)
+{
+    Node* temp = head;
 
+    while(temp != NULL)
+    {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+
+    cout << "NULL" << '\n';
+
+}
+
+int lengthofLL(Node* head)
+{
+    Node* temp = head;
+    int len = 0;
+
+    while(temp!=NULL)
+    {
+        temp = temp->next;
+        len++;
+    }
+
+    return len;
 }
 
 
@@ -41,9 +67,8 @@ int main()
     vector<int> array = {69,2,3,4,5};
 
     Node* head = convertArrtoLL(array);
-
-    cout << head->data << endl;
-
+    traversal(head);
+    cout << "length: " << lengthofLL(head) << "\n";
 
 
 
