@@ -51,11 +51,39 @@ void print(Node* head)
 
 Node* deletehead(Node* head)
 {
+
+    if(head == NULL)
+    {
+        return head;
+    }
+
     Node* temp = head;
     head = head->next;
     delete temp;
 
     return head;
+}
+
+Node* deletetail(Node* head)
+{
+    Node* temp = head;
+
+    if(head == NULL || head->next == NULL)
+    {
+        delete head;
+        return nullptr;
+    }
+
+    while(temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = NULL;
+    delete temp->next;
+
+    return head;
+
 }
 
 
@@ -64,7 +92,9 @@ int main()
 
     vector<int> array = {10,19,25,43,123};
     Node* head = arrtoll(array);
-    head = deletehead(head);
+    //head = deletehead(head);
+    //print(head);
+    head = deletetail(head);
     print(head);
 
 }
