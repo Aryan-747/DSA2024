@@ -100,7 +100,7 @@ int main()
     vector<int> array = {1,2,3,4,5};
     Node *head = arraytoLL(array);
     print(head);
-    head = deleteinll(head,100);
+    head = deleteinll(head,3);
     print(head);
 
 
