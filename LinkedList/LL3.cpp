@@ -156,8 +156,13 @@ Node* insertinll(Node*head,int pos,int val)
         cnt++;
     }
 
-    Node *nn = new Node(val);
-    prev->next = nn;
+    if(pos == cnt)
+    {
+        Node* nn = new Node(val);
+        prev->next = nn;
+        return head;
+    }
+
 
     return head;
 
