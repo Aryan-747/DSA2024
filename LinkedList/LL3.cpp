@@ -136,33 +136,23 @@ Node* insertinll(Node*head,int pos,int val)
         return head;
     }
 
-    int cnt = 1;
-    Node *prev = nullptr;
-    Node *temp = head;
+    int cnt = 0;
+    Node* temp = head;
 
     while(temp!=nullptr)
     {
-        if(cnt == pos)
+        cnt++;
+
+        if(cnt == pos-1)
         {
             Node *nn = new Node(val);
-            prev->next = nn;
-            nn->next = temp;
-
-            return head;
+            nn->next = temp->next;
+            temp->next = nn;
+            break;
         }
 
-        prev = temp;
         temp = temp->next;
-        cnt++;
     }
-
-    if(pos == cnt)
-    {
-        Node* nn = new Node(val);
-        prev->next = nn;
-        return head;
-    }
-
 
     return head;
 
@@ -180,7 +170,7 @@ int main()
     //print(head);
     //head = deletetail(head);
     //head = deleteatpos(head,4);
-    head = insertinll(head,6,100);
+    head = insertinll(head,3,100);
 
     print(head);
 
