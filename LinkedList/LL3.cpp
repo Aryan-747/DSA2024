@@ -121,6 +121,46 @@ Node* deleteatpos(Node* head, int k)
     }
 
     return head;
+}
+
+// Insertion (All types of testcases (front,last,in between))
+Node* insertinll(Node*head,int pos,int val)
+{
+
+    if(pos == 1)
+    {
+        Node *temp = new Node(val);
+        temp->next = head;
+        head = temp;
+
+        return head;
+    }
+
+    int cnt = 1;
+    Node *prev = nullptr;
+    Node *temp = head;
+
+    while(temp!=nullptr)
+    {
+        if(cnt == pos)
+        {
+            Node *nn = new Node(val);
+            prev->next = nn;
+            nn->next = temp;
+
+            return head;
+        }
+
+        prev = temp;
+        temp = temp->next;
+        cnt++;
+    }
+
+    Node *nn = new Node(val);
+    prev->next = nn;
+
+    return head;
+
 
 
 }
@@ -134,7 +174,9 @@ int main()
     //head = deletehead(head);
     //print(head);
     //head = deletetail(head);
-    head = deleteatpos(head,4);
+    //head = deleteatpos(head,4);
+    head = insertinll(head,6,100);
+
     print(head);
 
 }
