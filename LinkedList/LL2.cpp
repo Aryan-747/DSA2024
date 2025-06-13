@@ -61,69 +61,28 @@ int lengthofLL(Node* head)
     return len;
 }
 
-Node* insert(Node *head, int val, int pos)
-{
+Node* insert(Node* head, int val, int pos) {
+    Node* newnode = new Node(val);
+
+    // Inserting in empty list or at position 1
+    if (pos <= 1 || head == nullptr) {
+        newnode->next = head;
+        return newnode;
+    }
 
     Node* temp = head;
-    Node* prev = nullptr;
     int cnt = 1;
 
-    int len = lengthofLL(head);
-
-    //inserting at begining
-    if(pos == 1)
-    {
-        Node* newnode = new Node(val);
-        newnode->next = head;
-        head = newnode;
-        return head;
-
-    }
-
-    // inserting at an index larger than the number of nodes present, Inserts new node at the end by default, irrespective of how large the insert position is
-    if(pos>len)
-    {
-        Node* newnode = new Node(val);
-
-        while(temp->next!=nullptr)
-        {
-            temp = temp->next;
-        }
-
-        temp->next = newnode;
-        len = lengthofLL(head);
-
-        return head;
-    }
-
-    // edgecase head is null
-    if(temp == nullptr)
-    {
-        Node* newnode = new Node(val);
-        
-        temp = newnode;
-        return temp;
-
-    }
-
-    // normal case
-    while(temp!=nullptr)
-    {
-
-        if(cnt == pos)
-        {
-            break;
-        }
-        
-        cnt++;
-        prev = temp;
+    // Traverse to the (pos-1)th node or the last node
+    while (cnt < pos - 1 && temp->next != nullptr) {
         temp = temp->next;
-        
+        cnt++;
     }
 
-    Node* newnode = new Node(val);
-    prev->next = newnode;
-    newnode->next = temp;
+    // Insert newnode after temp
+    newnode->next = temp->next;
+    temp->next = newnode;
+
     return head;
 }
 
@@ -135,7 +94,7 @@ int main()
     Node* head = convertArrtoLL(array);
     traversal(head);
     cout << "length: " << lengthofLL(head) << "\n";
-    head = insert(head,55,5);
+    head = insert(head,55,1);
     traversal(head);
     cout << "length: " << lengthofLL(head) << "\n";
 
