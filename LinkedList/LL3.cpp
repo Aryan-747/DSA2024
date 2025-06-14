@@ -155,9 +155,6 @@ Node* insertinll(Node*head,int pos,int val)
     }
 
     return head;
-
-
-
 }
 
 

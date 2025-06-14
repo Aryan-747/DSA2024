@@ -98,6 +98,4 @@ int main()
     traversal(head);
     cout << "length: " << lengthofLL(head) << "\n";
 
-
-
 }
