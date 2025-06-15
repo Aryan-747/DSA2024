@@ -193,12 +193,97 @@ Node* deleteatKpos(Node*head, int pos)
 
 }
 
+// insert before head (Insert at position 1)
+Node* insertbeforehead(Node* head,int val)
+{
+    Node* temp = new Node(val,head,nullptr);
+    head->back = temp;
+
+    return temp;
+}
+
+// insert after tail (Insert at Last)
+Node* insertaftertail(Node* head, int val)
+{
+    Node* temp = head;
+
+    while(temp->next != nullptr)
+    {
+        temp = temp->next;
+    }
+
+
+    Node* newnode = new Node(val,nullptr,temp);
+    temp->next = newnode;
+
+    return head;
+
+}
+
+Node* insertatpos(Node* head, int val, int pos)
+{
+    // insert at head
+    if(head == nullptr)
+    {
+        Node* nn = new Node(val);
+
+        return nn;
+    }
+
+    // insert at head
+    if(pos == 1)
+    {
+        Node* nn = new Node(val,head,nullptr);
+        head->back = nn;
+
+        return nn;
+    }
+
+    Node* temp = head;
+    int cnt = 0;
+
+    while(temp!=nullptr)
+    {   
+        cnt++;
+
+        if(cnt == pos-1)
+        {
+            break;
+        }
+        
+        temp = temp->next;
+    }
+
+    if(temp == nullptr)
+    {
+        cout << "Position is out of Bounds" << endl;
+
+        return head;
+    }
+
+    // insert after tail
+    if(temp->next == nullptr)
+    {
+        Node* nn = new Node(val,nullptr,temp);
+        temp->next = nn;
+
+        return head;
+    }
+
+    Node* nn = new Node(val,temp->next,temp);
+    temp->next->back = nn;
+    temp->next = nn;
+
+    return head;
+}
+
+
 int main()
 {
 
     vector<int> arr = {1,2,3,4,5};
     Node* head = convertArr2DLL(arr);
-    head = deleteatKpos(head,4);
+    head = insertatpos(head,100,5);
     traversal(head);
   
 
