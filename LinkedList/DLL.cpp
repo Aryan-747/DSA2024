@@ -58,11 +58,55 @@ void traversal(Node* head)
     cout << " nullptr"  << '\n';
 }
 
+Node* deletehead(Node *head)
+{
+    if(head == nullptr || head->next == nullptr)
+    {
+        return nullptr;
+    }
+
+    Node* prev = head;
+    head = head->next;
+
+    head->back = nullptr;
+    prev->next = nullptr;
+
+    delete prev;
+    return head;
+}
+
+Node *deletetail(Node* head)
+{
+    if(head == nullptr || head->next == nullptr)
+    {
+        return nullptr;
+    }
+
+    Node* temp = head;
+    Node* prev = nullptr;
+
+    while(temp->next != nullptr)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    prev->next = nullptr;
+    temp->back = nullptr;
+
+    delete temp;
+
+    return head;
+
+}
+
 int main()
 {
 
     vector<int> arr = {1,2,3,4,5};
     Node* head = convertArr2DLL(arr);
+    head = deletehead(head);
+    head = deletetail(head);
     traversal(head);
 
 
