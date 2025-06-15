@@ -120,6 +120,7 @@ Node *deletetail(Node* head)
 
 }
 
+// All Deletion Cases
 Node* deleteatKpos(Node*head, int pos)
 {
     int cnt = 0;
@@ -220,6 +221,7 @@ Node* insertaftertail(Node* head, int val)
 
 }
 
+// All Insertion cases
 Node* insertatpos(Node* head, int val, int pos)
 {
     // insert at head
@@ -242,11 +244,11 @@ Node* insertatpos(Node* head, int val, int pos)
     Node* temp = head;
     int cnt = 0;
 
-    while(temp!=nullptr)
+    while(temp->next!=nullptr)
     {   
         cnt++;
 
-        if(cnt == pos-1)
+        if(cnt == pos)
         {
             break;
         }
@@ -254,14 +256,7 @@ Node* insertatpos(Node* head, int val, int pos)
         temp = temp->next;
     }
 
-    if(temp == nullptr)
-    {
-        cout << "Position is out of Bounds" << endl;
-
-        return head;
-    }
-
-    // insert after tail
+    // Position is out of bounds (By default adds element to the last, i.e after tail)
     if(temp->next == nullptr)
     {
         Node* nn = new Node(val,nullptr,temp);
@@ -270,11 +265,15 @@ Node* insertatpos(Node* head, int val, int pos)
         return head;
     }
 
-    Node* nn = new Node(val,temp->next,temp);
-    temp->next->back = nn;
-    temp->next = nn;
+    Node* prev = temp->back;
+
+    Node* nn = new Node(val,temp,prev);
+    prev->next = nn;
+    temp->back = nn;
 
     return head;
+
+  
 }
 
 
@@ -283,7 +282,7 @@ int main()
 
     vector<int> arr = {1,2,3,4,5};
     Node* head = convertArr2DLL(arr);
-    head = insertatpos(head,100,5);
+    head = insertatpos(head,100,2);
     traversal(head);
   
 
