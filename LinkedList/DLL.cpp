@@ -22,8 +22,8 @@ class Node
     Node(int data1, Node* next1, Node* back1)
     {
         data = data1;
-        next = nullptr;
-        back = nullptr;
+        next = next1;
+        back = back1;
     }
 
 };
@@ -58,6 +58,29 @@ void traversal(Node* head)
     cout << " nullptr"  << '\n';
 }
 
+Node* headtolast(Node* head)
+{
+    while(head->next!=nullptr)
+    {
+        head = head->next;
+    }
+    
+    return head;
+}
+
+void backtraversal(Node* head)
+{
+    Node* temp = head;
+
+    while(temp!=nullptr)
+    {
+        cout << temp->data << " -> ";
+        temp = temp->back;
+    }
+
+    cout << "nullptr" << '\n';
+}
+
 Node* deletehead(Node *head)
 {
     if(head == nullptr || head->next == nullptr)
@@ -77,25 +100,22 @@ Node* deletehead(Node *head)
 
 Node *deletetail(Node* head)
 {
-    if(head == nullptr || head->next == nullptr)
+    if(head == nullptr | head->next == nullptr)
     {
         return nullptr;
     }
 
     Node* temp = head;
-    Node* prev = nullptr;
 
     while(temp->next != nullptr)
     {
-        prev = temp;
         temp = temp->next;
     }
 
-    prev->next = nullptr;
+    temp->back->next = nullptr;
     temp->back = nullptr;
 
     delete temp;
-
     return head;
 
 }
@@ -108,6 +128,7 @@ int main()
     head = deletehead(head);
     head = deletetail(head);
     traversal(head);
+  
 
 
 }
