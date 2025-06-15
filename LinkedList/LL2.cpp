@@ -71,17 +71,25 @@ Node* insert(Node* head, int val, int pos) {
     }
 
     Node* temp = head;
-    int cnt = 1;
+    Node* prev = nullptr;
+    int cnt = 0;
 
-    // Traverse to the (pos-1)th node or the last node
-    while (cnt < pos - 1 && temp->next != nullptr) {
-        temp = temp->next;
+    while(temp!=nullptr)
+    {
+        if(cnt == pos-1)
+        {
+            break;
+        }
+
         cnt++;
+        prev = temp;
+        temp = temp->next;
     }
 
-    // Insert newnode after temp
-    newnode->next = temp->next;
-    temp->next = newnode;
+    Node* nn = new Node(val);
+    
+    nn->next = temp;
+    prev->next = nn;
 
     return head;
 }
@@ -94,7 +102,7 @@ int main()
     Node* head = convertArrtoLL(array);
     traversal(head);
     cout << "length: " << lengthofLL(head) << "\n";
-    head = insert(head,55,1);
+    head = insert(head,55,6);
     traversal(head);
     cout << "length: " << lengthofLL(head) << "\n";
 

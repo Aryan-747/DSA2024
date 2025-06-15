@@ -120,13 +120,85 @@ Node *deletetail(Node* head)
 
 }
 
+Node* deleteatKpos(Node*head, int pos)
+{
+    int cnt = 0;
+    Node* temp = head;
+
+    if(head == nullptr)
+    {
+        return nullptr;
+    }
+
+    while(temp!=nullptr)
+    {
+
+        cnt++;
+        if(cnt == pos)
+        {
+            break;
+        }
+        temp = temp->next;
+    }
+
+    if(temp == nullptr)
+    {
+        cout << "Position is Out Of Bounds! \n";
+        return head; 
+    }
+
+    // single node
+    else if(temp->back == nullptr && temp->next == nullptr)
+    {
+        delete temp;
+        return nullptr;
+    }
+
+    // delete head
+    else if(temp->back == nullptr)
+    {
+        Node* t2 = temp;
+        temp = temp->next;
+        temp->back = nullptr;
+        t2->next = nullptr;
+
+        delete t2;
+        return temp;
+    }
+
+    // delete tail
+    else if(temp->next == nullptr)
+    {
+        Node* t2 = temp;
+        temp = temp->back;
+
+        temp->next = nullptr;
+        t2->back = nullptr;
+
+        delete t2;
+        return head;
+    }
+
+    // in between
+    Node* t2 = temp;
+
+    t2->back->next = t2->next;
+    t2->next->back = t2->back;
+
+    t2->next = nullptr;
+    t2->back = nullptr;
+
+    delete t2;
+    return head;
+
+}
+
 int main()
 {
 
     vector<int> arr = {1,2,3,4,5};
     Node* head = convertArr2DLL(arr);
-    head = deletehead(head);
-    head = deletetail(head);
+    head = deleteatKpos(head,4);
     traversal(head);
   
 
