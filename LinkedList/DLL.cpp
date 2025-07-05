@@ -272,8 +272,6 @@ Node* insertatpos(Node* head, int val, int pos)
     temp->back = nn;
 
     return head;
-
-  
 }
 
 
