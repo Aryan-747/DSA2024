@@ -18,7 +18,7 @@ int fib(int n)
         {
             return STF[n];
         }
-
+        
         STF[n] = fib(n-2) + fib(n-1);
         return STF[n];
     }
