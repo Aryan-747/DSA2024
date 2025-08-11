@@ -28,7 +28,7 @@ class Q
 
     void push(int val)
     {
-        if(start == nullptr && end == nullptr) // first node being inserted
+        if(start == nullptr) // first node being inserted
         {
             Node* newnode = new Node(val);
             end = newnode;
@@ -51,20 +51,9 @@ class Q
     void pop()
     {
 
-        if(start == nullptr && end == nullptr)
+        if(start == nullptr)
         {
             cout << "Queue is Empty!\n";
-        }
-
-
-        else if(start->next == nullptr) // last node left
-        {
-            Node* temp = start;
-            start = nullptr;
-            end = nullptr;
-            cursize--;
-            cout << temp->data << " Popped from Queue.\n";
-            delete temp;
         }
 
         else
